@@ -52,4 +52,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
     }
+
+    //Bean for PhoneNumber validation
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasenames("ValidationMessages");
+        return messageSource;
+    }
 }
